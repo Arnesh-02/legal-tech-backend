@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Founder Employment Agreement</title>
+    <style>
+        /* --- Page Background Style --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #e0e0e0; /* Grey background to show the "paper" */
+            color: #212529;
+            padding: 2rem 0; /* Add padding to top/bottom only */
+        }
+
+        /* --- Formal Document Container --- */
+        .document-container {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12pt; /* Standard document font size */
+            line-height: 1.5;
+            background-color: #fff; /* The white "paper" */
+            width: 21cm; /* A4 width */
+            min-height: 29.7cm; /* A4 height */
+            margin: 0 auto; /* Center the "paper" */
+            padding: 1in; /* Standard 1-inch margins */
+            border: 1px solid #b0b0b0; /* Faint border for the paper edge */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            border-radius: 0; /* No rounded corners */
+            box-sizing: border-box; /* Include padding in width/height */
+        }
+
+        /* --- Text & Heading Styles --- */
+        h2 {
+            text-align: center;
+            font-weight: 700;
+            text-decoration: underline;
+            margin-bottom: 2.5rem;
+            font-size: 16pt;
+        }
+        
+        h3 {
+             font-size: 13pt;
+             font-weight: 700;
+             margin-top: 2rem;
+             margin-bottom: 1rem;
+             border-bottom: 1px solid #eee;
+             padding-bottom: 0.25rem;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            text-align: justify; /* Justified text for formal look */
+        }
+
+        strong {
+            font-weight: 700;
+            color: #000;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* --- List Styles --- */
+        ol {
+            padding-left: 2rem;
+            margin-bottom: 1.25rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            text-align: justify;
+        }
+        
+        /* --- Placeholder Styles --- */
+        .placeholder-tag {
+            display: inline-block;
+            font-weight: 600;
+            padding: 0 0.25em;
+            border-radius: 3px;
+            min-width: 60px; /* Reduced min-width */
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 11pt; /* Slightly smaller for inline */
+            line-height: 1.4;
+            vertical-align: baseline;
+        }
+
+        /* --- Signature Section --- */
+        .signature-section {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            border-top: 1px solid #ced4da;
+            padding-top: 2rem;
+        }
+
+        .signature-block {
+            padding: 1rem;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+        }
+        
+        .signature-block h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            margin-top: 0;
+        }
+        
+        .signature-block p {
+            margin-bottom: 0.5rem;
+            text-align: left; /* Signatures shouldn't be justified */
+        }
+        
+        /* --- Print-Specific Styles --- */
+        @media print {
+            body {
+                background-color: #fff;
+                padding: 0;
+            }
+            .document-container {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                border: none;
+                box-shadow: none;
+            }
+            .placeholder-tag {
+                color: #000;
+                background-color: transparent;
+                font-weight: 700;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+<div class="document-container">
+
+    <h2>FOUNDER EMPLOYMENT AGREEMENT</h2>
+    
+    <p>
+        This Founder Employment Agreement ("Agreement") is made and entered into on 
+        <span class="placeholder-tag">{{ effective.date }}</span>, by and between:
+    </p>
+    
+    <p>
+        <span class="placeholder-tag">{{ company.name }}</span>, a company incorporated under the laws of
+        India, having its registered office at <span class="placeholder-tag">{{ company.address }}</span> (hereinafter referred to as the &ldquo;Company&rdquo;,
+        which expression shall, unless repugnant to the context or meaning thereof, include its successors and permitted
+        assigns),
+    </p>
+    
+    <p><strong>AND</strong></p>
+    
+    <p>
+        <span class="placeholder-tag">{{ founder.name }}</span>, residing at <span class="placeholder-tag">{{ founder.address }}</span> (hereinafter referred to as the
+        &ldquo;Founder&rdquo;, which expression shall, unless repugnant to the context or meaning thereof, include his/her
+        heirs, executors, administrators, and permitted assigns).
+    </p>
+    
+    <p><strong>WHEREAS:</strong></p>
+    
+    <p>
+        A. The Company desires to employ the Founder in the capacity of <span class="placeholder-tag">{{ founder.designation }}</span>, and the Founder has agreed to such employment under the terms and conditions set forth herein.<br>
+        B. The Founder acknowledges that he/she will play a key role in the strategic and operational functions of the
+        Company.<br>
+        C. Both parties wish to define their respective rights and obligations during the course of such
+        employment.
+    </p>
+
+    <h3>1. Appointment</h3>
+    <p>
+        1.1 The Company hereby appoints the Founder, and the Founder accepts such appointment, as 
+        <span class="placeholder-tag">{{ founder.designation }}</span>
+        of the Company with effect from <span class="placeholder-tag">{{ effective.date }}</span>.
+    </p>
+    <p>
+        1.2 The Founder shall perform all duties customarily associated with such position and any other responsibilities
+        assigned by the Board of Directors of the Company.
+    </p>
+
+    <h3>2. Term</h3>
+    <p>
+        2.1 This Agreement shall commence on <span class="placeholder-tag">{{ effective.date }}</span> and shall continue unless terminated earlier in accordance
+        with the provisions of this Agreement.
+    </p>
+    <p>2.2 The Founder&rsquo;s employment shall be subject to satisfactory performance and compliance with Company policies.</p>
+
+    <h3>3. Duties and Responsibilities</h3>
+    <p>3.1 The Founder shall devote his/her full time, skill, and attention to the business of the Company.</p>
+    <p>3.2 The Founder agrees to perform such duties as are assigned by the Board and act in the best interests of the Company.</p>
+    <p>3.3 The Founder shall comply with all laws, Company rules, and policies applicable to his/her position.</p>
+    <p>3.4 The Founder shall not, without prior written approval, engage in any other business, profession, or employment.</p>
+
+    <h3>4. Place of Work</h3>
+    <p>
+        4.1 The Founder shall perform his/her duties primarily at the Company&rsquo;s office located at 
+        <span class="placeholder-tag">{{ company.address }}</span>, or such other location as may be determined by the Company from time to time.
+    </p>
+    <p>4.2 The Founder agrees to travel for business purposes as reasonably required.</p>
+
+    <h3>5. Compensation and Benefits</h3>
+    <p>
+        5.1 The Founder shall receive a salary of ₹<span class="placeholder-tag">{{ founder.salary }}</span>/- (Rupees 
+        <span class="placeholder-tag">{{ founder.salary.words }}</span> only) per annum,
+        payable in accordance with the Company&rsquo;s standard payroll practices.
+    </p>
+    <p>5.2 The Founder shall be entitled to participate in all benefit plans and programs generally made available to employees of similar standing.</p>
+    <p>5.3 The Company may, at its discretion, grant bonuses, incentives, or equity-based compensation to the Founder, as determined by the Board.</p>
+
+    <h3>6. Expenses</h3>
+    <p>6.1 The Company shall reimburse the Founder for all reasonable and necessary business expenses incurred in connection with the performance of duties, upon submission of proper documentation.</p>
+
+    <h3>7. Confidentiality and Intellectual Property</h3>
+    <p>7.1 The Founder acknowledges that, during the course of employment, he/she will have access to confidential and
+        proprietary information of the Company.</p>
+    <p>7.2 The Founder shall not, during or after the term of employment, disclose or use any such information for any
+        purpose other than the performance of his/her duties.</p>
+    <p>7.3 All inventions, discoveries, designs, or works developed by the Founder during the course of employment that
+        relate to the business of the Company shall be the sole property of the Company.</p>
+    <p>7.4 The Founder agrees to execute any necessary documents to assign ownership rights of such intellectual property to
+        the Company.</p>
+
+    <h3>8. Non-Compete and Non-Solicitation</h3>
+    <p>
+        8.1 During the term of this Agreement and for a period of <span class="placeholder-tag">{{ noncompete.period }}</span> months following termination, the
+        Founder shall not engage in any business that competes with the Company.
+    </p>
+    <p>8.2 The Founder shall not solicit or attempt to solicit any employee, consultant, or customer of the Company during
+        the same period.</p>
+
+    <h3>9. Termination</h3>
+    <p>
+        9.1 This Agreement may be terminated:<br>
+        (a) By either party upon <span class="placeholder-tag">{{ notice.period }}</span> days&rsquo; written notice.<br>
+        (b) By the Company without notice for cause, including but not limited to breach of this Agreement,
+        misconduct, or failure to perform duties.<br>
+        (c) By the Company upon payment in lieu of notice.
+    </p>
+    <p>9.2 Upon termination, the Founder shall immediately return all Company property, documents, and confidential
+        materials.</p>
+
+    <h3>10. Severance</h3>
+    <p>
+        10.1 If terminated without cause, the Founder shall be entitled to a severance payment equivalent to 
+        <span class="placeholder-tag">{{ severance.amount }}</span> months of base salary.
+    </p>
+    <p>10.2 No severance shall be payable in cases of termination for cause or voluntary resignation.</p>
+
+    <h3>11. Conflict of Interest</h3>
+    <p>11.1 The Founder shall promptly disclose to the Company any interest that may conflict with the performance of
+        duties.</p>
+    <p>11.2 The Founder shall not use his/her position for personal gain other than compensation expressly approved by the
+        Company.</p>
+
+    <h3>12. Notices</h3>
+    <p>12.1 Any notice under this Agreement shall be in writing and delivered personally, by courier, or by registered post
+        to the following addresses:</p>
+    <p>
+        <strong>To the Company:</strong> <br>
+        <span class="placeholder-tag">{{company.name }}</span><br>
+        <span class="placeholder-tag">{{ company.address }}</span>
+    </p>
+    <p>
+        <strong>To the Founder:</strong> <br>
+        <span class="placeholder-tag">{{ founder.name }}</span><br>
+        <span class="placeholder-tag">{{ founder.address }}</span>
+    </p>
+    <p>12.2 Notices shall be deemed received when delivered personally or three (3) days after dispatch by registered post.
+    </p>
+
+    <h3>13. Governing Law and Jurisdiction</h3>
+    <p>13.1 This Agreement shall be governed by and construed in accordance with the laws of India.</p>
+    <p>
+        13.2 The courts at <span class="placeholder-tag">{{ jurisdiction.city }}</span> shall have exclusive jurisdiction to adjudicate any disputes arising from
+        this Agreement.
+    </p>
+
+    <h3>14. Entire Agreement</h3>
+    <p>14.1 This Agreement constitutes the entire understanding between the parties with respect to the subject matter and
+        supersedes all prior agreements or representations.</p>
+    <p>14.2 Any modification must be in writing and signed by both parties.</p>
+
+    <h3>15. Severability</h3>
+    <p>15.1 If any provision of this Agreement is held invalid or unenforceable, the remaining provisions shall remain in
+        full force and effect.</p>
+
+    <h3>16. Waiver</h3>
+    <p>16.1 Failure of either party to enforce any provision of this Agreement shall not be construed as a waiver of any
+        rights under it.</p>
+
+    <h3>17. Assignment</h3>
+    <p>17.1 The Founder shall not assign or transfer any rights or obligations under this Agreement without prior written
+        consent of the Company.</p>
+    <p>17.2 The Company may assign this Agreement to any successor or affiliate.</p>
+
+    <h3>18. Counterparts</h3>
+    <p>18.1 This Agreement may be executed in counterparts, each of which shall be deemed an original but all of which
+        together shall constitute one and the same instrument.</p>
+
+    <p><strong>IN WITNESS WHEREOF</strong></p>
+    <p>The parties hereto have executed this Founder Employment Agreement on the day and year first written above.</p>
+
+    <div class="signature-section">
+        <div class="signature-block">
+            <h3>For: <span class="placeholder-tag">{{ company.name }}</span></h3>
+            <p>Name: <span class="placeholder-tag">{{ authorized.signatory.name }}</span></a-im-7></p>
+            <p>Designation: <span class="placeholder-tag">{{ authorized.signatory.designation }}</span></p>
+            <p>Date: <span class="placeholder-tag">{{ effective.date }}</span></p>
+        </div>
+        
+        <div class="signature-block">
+            <h3>Founder</h3>
+            <p>Name: <span class="placeholder-tag">{{ founder.name }}</span></p>
+            <p>Date: <span class="placeholder-tag">{{ effective.date }}</span></p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+

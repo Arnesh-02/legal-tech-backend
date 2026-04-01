@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NDA Template</title>
+    <style>
+        /* --- Page Background Style --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #e0e0e0; /* Grey background to show the "paper" */
+            color: #212529;
+            padding: 2rem 0; /* Add padding to top/bottom only */
+        }
+
+        /* --- Formal Document Container --- */
+        .document-container { /* Changed from nda-container */
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12pt; /* Standard document font size */
+            line-height: 1.5;
+            background-color: #ffffff; /* The white "paper" */
+            width: 21cm; /* A4 width */
+            min-height: 29.7cm; /* A4 height */
+            margin: 0 auto; /* Center the "paper" */
+            padding: 1in; /* Standard 1-inch margins */
+             /* Faint border for the paper edge */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            border-radius: 0; /* No rounded corners */
+            box-sizing: border-box; /* Include padding in width/height */
+        }
+
+        /* --- Text & Heading Styles --- */
+        h2 {
+            text-align: center;
+            font-weight: 700;
+            text-decoration: underline;
+            margin-bottom: 2.5rem;
+            font-size: 16pt;
+        }
+        
+        h3 {
+             font-size: 13pt;
+             font-weight: 700;
+             margin-top: 2rem;
+             margin-bottom: 1rem;
+             border-bottom: 1px solid #eee;
+             padding-bottom: 0.25rem;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            text-align: justify; /* Justified text for formal look */
+        }
+
+        strong {
+            font-weight: 700;
+            color: #000;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* --- List Styles --- */
+        ol {
+            padding-left: 2rem;
+            margin-bottom: 1.25rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            text-align: justify;
+        }
+        
+        /* --- Placeholder Styles --- */
+        .placeholder-tag {
+            display: inline-block;
+            font-weight: 600;
+            border-bottom: 1px dashed #05070a;
+            padding: 0 0.25em;
+            border-radius: 3px;
+            min-width: 60px; /* Reduced min-width */
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 11pt; /* Slightly smaller for inline */
+            line-height: 1.4;
+            vertical-align: baseline;
+        }
+
+        /* --- Signature Section --- */
+        .signature-section {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            border-top: 1px solid #ced4da;
+            padding-top: 2rem;
+        }
+
+        .signature-block {
+            padding: 1rem;
+            border: 1px solid #ffffff;
+            border-radius: 6px;
+        }
+        
+        .signature-block h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-bottom: 1px solid #ffffff;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            margin-top: 0;
+        }
+        
+        .signature-block p {
+            margin-bottom: 0.5rem;
+            text-align: left; /* Signatures shouldn't be justified */
+        }
+        
+        /* --- Print-Specific Styles --- */
+        @media print {
+            body {
+                background-color: #fff;
+                padding: 0;
+            }
+            .document-container {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                border: none;
+                box-shadow: none;
+            }
+            .placeholder-tag {
+                color: #000;
+                background-color: transparent;
+                border-bottom: 1px solid #999;
+                font-weight: 700;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="document-container"> <!-- Applied the main container class -->
+        <h2>Non-Disclosure Agreement</h2>
+
+        <p>
+            <strong>This Agreement</strong> made on this the
+            <span class="placeholder-tag">{{ EFFECTIVE_DAY }}</span> day of
+            <span class="placeholder-tag">{{ EFFECTIVE_MONTH }}</span>,
+            <span class="placeholder-tag">{{ EFFECTIVE_YEAR }}</span>
+        </p>
+
+        <p><strong>By and Between</strong></p>
+        
+        <p>
+            <strong>
+                <span class="placeholder-tag">{{ PARTY_1_NAME }}</span>, a company incorporated under the Companies Act, 1956 and having its registered office at 
+                <span class="placeholder-tag">{{ PARTY_1_ADDRESS }}</span> (hereinafter referred to as &ldquo;<span class="placeholder-tag">{{ PARTY_1_SHORT_NAME }}</span>&rdquo;, which expression shall unless repugnant to the context or meaning thereof, include its successors in interests and assigns) of the one part;
+            </strong>
+        </p>
+        
+        <p><strong>And</strong></p>
+        
+        <p>
+            <strong>
+                <span class="placeholder-tag">{{ PARTY_2_NAME }}</span>, a company incorporated under the Companies Act, 2013 and having its registered office at 
+                <span class="placeholder-tag">{{ PARTY_2_ADDRESS }}</span> (hereinafter referred to as &ldquo;Company&rdquo; which expression shall, unless repugnant to the context or meaning thereof, be deemed to include its representatives and permitted assigns) of the Other part;
+            </strong>
+        </p>
+        
+        <p>
+            <em><span class="placeholder-tag">{{ PARTY_1_SHORT_NAME }}</span></em> and COMPANY shall hereinafter be referred to as such or collectively as &ldquo;<strong>Parties</strong>&rdquo; and individually as &ldquo;<strong>Party</strong>&rdquo;.
+        </p>
+
+        <p>
+            <strong>WHEREAS</strong> both the Parties herein wish to pursue discussions and negotiate with each other for the purpose of entering into a potential business arrangement in relation to
+            <strong><span class="placeholder-tag">{{ PROPOSED_TRANSACTION }}</span> (&ldquo;Proposed Transaction&rdquo;);</strong>
+        </p>
+        
+        <p>
+            <strong>AND WHEREAS</strong> the Parties contemplate that with respect to the Proposed Transaction, both the Parties may exchange certain information, material and documents relating to each other&rsquo;s business, assets, financial condition, operations, plans and/or prospects of their businesses (hereinafter referred to as &ldquo;<strong>Confidential Information</strong>&rdquo;, more fully detailed in clause 1 herein below) that each Party regards as proprietary and confidential; and
+        </p>
+        
+        <p>
+            <strong>AND WHEREAS</strong>, each Party wishes to review such Confidential Information of the other for the sole purpose of determining their mutual interest in engaging in the Proposed Transaction;
+        </p>
+        
+        <p><strong>IN CONNECTION WITH THE ABOVE, THE PARTIES HEREBY AGREE AS FOLLOWS:</strong></p>
+        
+        <ol>
+            <li>
+                &ldquo;<strong>Confidential and or proprietary Information</strong>&rdquo; shall mean and include any information disclosed by one Party (Disclosing Party) to the other (Receiving Party) either directly or indirectly, in writing, orally, by inspection of tangible objects (including, without limitation, documents, prototypes, samples, media, documentation, discs and code). Confidential information shall include, without limitation, any materials, trade secrets, network information, configurations, trademarks, brand name, know-how, business and marketing plans, financial and operational information, and all other non-public information, material or data relating to the current and/ or future business and operations of the Disclosing Party and analysis, compilations, studies, summaries, extracts or other documentation prepared by the Disclosing Party. Confidential Information may also include information disclosed to the Receiving Party by third parties on behalf of the Disclosing Party.
+            </li>
+            
+            <li>
+                The Receiving Party shall refrain from disclosing, reproducing, summarising and/or distributing Confidential Information and confidential materials of the Disclosing Party except in connection with the Proposed Transaction.
+            </li>
+            
+            <li>
+                The Parties shall protect the confidentiality of each other&rsquo;s Confidential Information in the same manner as they protect the confidentiality of their own proprietary and confidential information of similar nature. Each Party, while acknowledging the confidential and proprietary nature of the Confidential Information agrees to take all reasonable measures at its own expense to restrain its representatives from prohibited or unauthorised disclosure or use of the Confidential Information.
+            </li>
+            
+            <li>
+                Confidential Information shall at all times remain the property of the Disclosing Party and may not be copied or reproduced by the Receiving Party without the Disclosing Party&rsquo;s prior written consent.
+            </li>
+            
+            <li>
+                Within seven (7) days of a written request by the Disclosing Party, the Receiving Party shall return/destroy (as may be requested in writing by the Disclosing Party or upon expiry and or earlier termination) all originals, copies, reproductions and summaries of Confidential Information provided to the Receiving Party as Confidential Information. The Receiving Party shall certify to the Disclosing Party in writing that it has satisfied its obligations under this paragraph.
+            </li>
+            
+            <li>
+                The Receiving Party may disclose the Confidential Information only to the Receiving Party's employees and consultants on a need-to-know basis. The Receiving Party shall have executed or shall execute appropriate written agreements with third parties, in a form and manner sufficient to enable the Receiving Party to enforce all the provisions of this Agreement.
+            </li>
+            
+            <li>
+                Confidential Information, however, shall not include any information which the Receiving Party can show:
+                <br>i) is in or comes into the public domain otherwise than through a breach of this Agreement or the fault of the Receiving Party; or
+                <br>ii) was already in its possession free of any such restriction prior to receipt from the Disclosing Party; or
+                <br>iii) was independently developed by the Receiving Party without making use of the Confidential Information; or
+                <br>iv) has been approved for release or use (in either case without restriction) by written authorisation of the Disclosing Party.
+            </li>
+            
+            <li>
+                In the event either Party receives a summons or other validly issued administrative or judicial process requiring the disclosure of Confidential Information of the other Party, the Receiving Party shall promptly notify the Disclosing Party. The Receiving Party may disclose Confidential Information to the extent such disclosure is required by law, rule, regulation or legal process; <em>provided however</em>, that, to the extent practicable, the Receiving Party shall give prompt written notice of any such request for such information to the Disclosing Party, and agrees to co-operate with the Disclosing Party, at the Disclosing Party&rsquo;s expense, to the extent permissible and practicable, to challenge the request or limit the scope there of, as the Disclosing Party may reasonably deem appropriate.
+            </li>
+            
+            <li>
+                Neither Party shall use the other&rsquo;s name, trademarks, proprietary words or symbols or disclose under this Agreement in any publication, press release, marketing material, or otherwise without the prior written approval of the other.
+            </li>
+            
+            <li>
+                Each Party agrees that the conditions in this Agreement and the Confidential Information disclosed pursuant to this Agreement are of a special, unique, and extraordinary character and that an impending or existing violation of any provision of this Agreement would cause the other Party irreparable injury for which it would have no adequate remedy at law and further agrees that the other Party shall be entitled to obtain immediately injunctive relief prohibiting such violation, in addition to any other rights and remedies available to it at law or in equity.
+            </li>
+            
+            <li>
+                The Receiving Party shall indemnify the Disclosing Party for all costs, expenses or damages that Disclosing Party incurs as a result of any violation of any provisions of this Agreement. This obligation shall include court, litigation expenses, and actual, reasonable attorney&rsquo;s fees. The Parties acknowledge that as damages may not be a sufficient remedy for any breach under this Agreement, the non-breaching party is entitled to seek specific performance or injunctive relief (as appropriate) as a remedy for any breach or threatened breach, in addition to any other remedies at law or in equity.
+            </li>
+            
+            <li>
+                Neither Party shall be liable for any special, consequential, incidental or exemplary damages or loss (or any lost profits, savings or business opportunity) regardless of whether a Party was advised of the possibility of the damage or loss asserted.
+            </li>
+            
+            <li>
+                Both the Parties agree that by virtue of the Parties entering into this Agreement neither Party is obligated to disclose all or any of the Confidential Information to the other as stated in this Agreement. The Parties reserve the right to disclose only such information at its discretion and which it thinks, is necessary to disclose in relation to the Proposed Transaction.
+            </li>
+            
+            <li>
+                Both the Parties agree that this Agreement will be effective from the date of execution of this Agreement by both Parties and shall continue to be effective till the Proposed Transaction is terminated by either Party by giving a thirty (30)days notice, in case either Party foresees that the Proposed Transaction would not be achieved.
+                <br><br>
+                Notwithstanding anything contained herein, the provisions of this Agreement shall survive and continue after expiration or termination of this Agreement for a further period of five year(s) from the date of expiration.
+                <br><br>
+                It being further clarified that notwithstanding anything contained herein, in case a binding agreement is executed between the Parties in furtherance of the Proposed Transaction, the terms and conditions of this Agreement shall become effective and form a part of that binding agreement and be co-terminus with such binding agreement and shall be in effect till the term of such binding agreement and shall after its expiry and or early termination shall continue to be in force in the following manner:
+                <br>i. 5 years after the termination of the binding agreement
+                <br>ii. 5 years after the expiry of the binding agreement
+            </li>
+            
+            <li>
+                Each Party warrants that it has the authority to enter into this Agreement.
+            </li>
+            
+            <li>
+                If any provision of this agreement is held to be invalid or unenforceable to any extent, the remainder of this Agreement shall not be affected and each provision hereof shall be valid and enforceable to the fullest extent permitted by law. Any invalid or unenforceable provision of this Agreement shall be replaced with a provision that is valid and enforceable and most nearly reflects the original intent of the unenforceable provision.
+            </li>
+            
+            <li>
+                This Agreement may be executed in two counterparts, each of which will be deemed to be an original, and all of which, when taken together, shall be deemed to constitute one and the same agreement.
+            </li>
+            
+            <li>
+                The relationship between both the Parties to this Agreement shall be on a principal-to-principal basis and nothing in this agreement shall be deemed to have created a relationship of an agent or partner between the Parties and none of the employees of COMPANY shall be considered as employees of PARTY 1.
+            </li>
+            
+            <li>
+                This Agreement shall be governed by the laws of India. Both parties irrevocably submit to the exclusive jurisdiction of the Courts in Bangalore, for any action or proceeding regarding this Agreement. Any dispute or claim arising out of or in connection herewith, or the breach, termination or invalidity thereof, shall be settled by arbitration in accordance with the provisions of Procedure of the Indian Arbitration &amp; Conciliation Act, 1996, including any amendments thereof. The arbitration tribunal shall be composed of a sole arbitrator, and such arbitrator shall be appointed mutually by the Parties. The place of arbitration shall be Bangalore, India and the arbitration proceedings shall be take place in the English language.
+            </li>
+            
+            <li>
+                Additional oral agreements do not exist. All modifications and amendments to this Agreement must be made in writing.
+            </li>
+            
+            <li>
+                The Agreement and/or any rights arising from it cannot be assigned or otherwise transferred either wholly or in part, without the written consent of the other Part
+            </li>
+        </ol>
+
+        <p>
+            <strong>IN WITNESS WHEREOF, the parties hereto have executed this confidentiality agreement in duplicate by affixing the signature of the authorised representatives as of the date herein above mentioned.</strong>
+        </p>
+
+        <div class="signature-section"> 
+
+            <div class="signature-block">
+                <h3>Party 1: <span class="placeholder-tag">{{ PARTY_1_NAME }}</span></h3>
+                <p>Name: <span class="placeholder-tag">{{ PARTY_1_SIGNATORY_NAME }}</span></p>
+                <p>Place: <span class="placeholder-tag">{{ PARTY_1_SIGN_PLACE }}</span></p>
+                <p>Date: <span class="placeholder-tag">{{ EFFECTIVE_DAY }} {{ EFFECTIVE_MONTH }}, {{ EFFECTIVE_YEAR }}</span></p>
+            </div>
+
+            <div class="signature-block">
+                <h3>Party 2: <span class="placeholder-tag">{{ PARTY_2_NAME }}</span></h3>
+                <p>Name: <span class="placeholder-tag">{{ PARTY_2_SIGNATORY_NAME }}</span></p>
+                <p>Place: <span class="placeholder-tag">{{ PARTY_2_SIGN_PLACE }}</span></p>
+                <p>Date: <span class="placeholder-tag">{{ EFFECTIVE_DAY }} {{ EFFECTIVE_MONTH }}, {{ EFFECTIVE_YEAR }}</span></p>
+            </div>
+
+        </div>
+
+        
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertible Note Agreement</title>
+    <style>
+        /* --- Page Background Style --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #e0e0e0; /* Grey background to show the "paper" */
+            color: #212529;
+            padding: 2rem 0; /* Add padding to top/bottom only */
+        }
+
+        /* --- Formal Document Container --- */
+        .document-container {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12pt; /* Standard document font size */
+            line-height: 1.5;
+            background-color: #fff; /* The white "paper" */
+            width: 21cm; /* A4 width */
+            min-height: 29.7cm; /* A4 height */
+            margin: 0 auto; /* Center the "paper" */
+            padding: 1in; /* Standard 1-inch margins */
+            border: 1px solid #b0b0b0; /* Faint border for the paper edge */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            border-radius: 0; /* No rounded corners */
+            box-sizing: border-box; /* Include padding in width/height */
+        }
+
+        /* --- Text & Heading Styles --- */
+        h2 {
+            text-align: center;
+            font-weight: 700;
+            text-decoration: underline;
+            margin-bottom: 2.5rem;
+            font-size: 16pt;
+        }
+        
+        h3 {
+             font-size: 13pt;
+             font-weight: 700;
+             margin-top: 2rem;
+             margin-bottom: 1rem;
+             border-bottom: 1px solid #eee;
+             padding-bottom: 0.25rem;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            text-align: justify; /* Justified text for formal look */
+        }
+
+        strong {
+            font-weight: 700;
+            color: #000;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* --- List Styles --- */
+        ol {
+            padding-left: 2rem;
+            margin-bottom: 1.25rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            text-align: justify;
+        }
+        
+        /* --- Placeholder Styles --- */
+        .placeholder-tag {
+            display: inline-block;
+            font-weight: 600;
+            padding: 0 0.25em;
+            border-radius: 3px;
+            min-width: 60px; /* Reduced min-width */
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 11pt; /* Slightly smaller for inline */
+            line-height: 1.4;
+            vertical-align: baseline;
+        }
+
+        /* --- Signature Section --- */
+        .signature-section {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            border-top: 1px solid #ced4da;
+            padding-top: 2rem;
+        }
+
+        .signature-block {
+            padding: 1rem;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+        }
+        
+        .signature-block h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            margin-top: 0;
+        }
+        
+        .signature-block p {
+            margin-bottom: 0.5rem;
+            text-align: left; /* Signatures shouldn't be justified */
+        }
+        
+        /* --- Print-Specific Styles --- */
+        @media print {
+            body {
+                background-color: #fff;
+                padding: 0;
+            }
+            .document-container {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                border: none;
+                box-shadow: none;
+            }
+            .placeholder-tag {
+                color: #000;
+                background-color: transparent;
+                font-weight: 700;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+<div class="document-container">
+
+    <h2>CONVERTIBLE PROMISSORY NOTE</h2>
+    
+    <p>
+        <strong>Principal Amount:</strong> $<span class="placeholder-tag">{{ note.principal.amount }}</span><br>
+        <strong>Issue Date:</strong> <span class="placeholder-tag">{{ note.issue.date }}</span>
+    </p>
+    
+    <p>
+        FOR VALUE RECEIVED, the undersigned, <span class="placeholder-tag">{{ company.name }}</span> (the "Company"), a corporation organized under the laws of <span class="placeholder-tag">{{ company.jurisdiction }}</span>, hereby promises to pay to the order of <span class="placeholder-tag">{{ investor.name }}</span> (the "Holder"), having an address at <span class="placeholder-tag">{{ investor.address }}</span>, the Principal Amount of $<span class="placeholder-tag">{{ note.principal.amount }}</span>, plus accrued interest, on the Maturity Date, or sooner, as set forth below.
+    </p>
+
+    <h3>1. Interest</h3>
+    <p>
+        1.1 The Principal Amount of this Note shall bear simple interest at an annual rate of <span class="placeholder-tag">{{ interest.rate }}</span>% (the "Interest Rate"), calculated on the basis of a 365-day year. Interest shall commence on the Issue Date and shall be payable upon the Maturity Date or upon conversion or repayment of the Note.
+    </p>
+
+    <h3>2. Maturity</h3>
+    <p>
+        2.1 Unless earlier converted or repaid, the entire unpaid Principal Amount of this Note, together with all accrued and unpaid interest, shall become due and payable on <span class="placeholder-tag">{{ note.maturity.date }}</span> (the "Maturity Date").
+    </p>
+
+    <h3>3. Conversion upon Equity Financing</h3>
+    <p>
+        3.1 Upon the closing of the Company's next financing round of at least $<span class="placeholder-tag">{{ minimum.raise.amount }}</span> (the "Qualified Financing"), the Note shall automatically convert into shares of the Company's equity securities sold in the Qualified Financing.
+    </p>
+    <p>
+        3.2 The conversion price shall be the price paid per share by the investors in the Qualified Financing, subject to a **Discount Rate** of <span class="placeholder-tag">{{ conversion.discount.rate }}</span>% and a **Valuation Cap** of $<span class="placeholder-tag">{{ valuation.cap }}</span>.
+    </p>
+
+    <h3>4. Optional Conversion</h3>
+    <p>
+        4.1 If the Company has not closed a Qualified Financing prior to the Maturity Date, the Holder may, at their option, convert the Note into shares of the Company's then-current class of Preferred Stock (or Common Stock if no Preferred Stock exists).
+    </p>
+
+    <h3>5. Change of Control</h3>
+    <p>
+        5.1 If a Change of Control (as defined in Section 5.2) occurs before the Note converts, the Holder shall be entitled to receive, at the Holder's option, either (i) repayment of the Principal Amount plus accrued interest, or (ii) conversion of the Note into Common Stock at the Conversion Price.
+    </p>
+
+    <h3>6. Governing Law</h3>
+    <p>6.1 This Note shall be governed by and construed in accordance with the laws of the State of <span class="placeholder-tag">{{ governing.state }}</span>, without regard to its conflict of laws principles.</p>
+
+    <h3>7. Transfer</h3>
+    <p>7.1 This Note may not be transferred or assigned by the Holder without the prior written consent of the Company, unless to an affiliate of the Holder.</p>
+
+    <h3>8. Waiver and Amendment</h3>
+    <p>8.1 The terms of this Note may be amended or waived only with the prior written consent of the Company and the Holder.</p>
+
+    <h3>9. Notices</h3>
+    <p>9.1 All notices required hereunder shall be in writing and delivered to the addresses set forth above.</p>
+
+    <p><strong>IN WITNESS WHEREOF</strong></p>
+    <p>The parties hereto have executed this Convertible Note Agreement as of the Issue Date.</p>
+
+    <div class="signature-section">
+        <div class="signature-block">
+            <h3>The Company: <span class="placeholder-tag">{{ company.name }}</span></h3>
+            <p>Signature: __________________________</p>
+            <p>Name: <span class="placeholder-tag">{{ company.signatory.name }}</span></p>
+            <p>Title: <span class="placeholder-tag">{{ company.signatory.title }}</span></p>
+        </div>
+        
+        <div class="signature-block">
+            <h3>The Holder: <span class="placeholder-tag">{{ investor.name }}</span></h3>
+            <p>Signature: __________________________</p>
+            <p>Name: <span class="placeholder-tag">{{ investor.signatory.name }}</span></p>
+            <p>Title: <span class="placeholder-tag">{{ investor.signatory.title }}</span></p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

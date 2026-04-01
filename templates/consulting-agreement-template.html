@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulting Agreement</title>
+    <style>
+        /* --- Page Background Style --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #e0e0e0; /* Grey background to show the "paper" */
+            color: #212529;
+            padding: 2rem 0; /* Add padding to top/bottom only */
+        }
+
+        /* --- Formal Document Container --- */
+        .document-container {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12pt; /* Standard document font size */
+            line-height: 1.5;
+            background-color: #fff; /* The white "paper" */
+            width: 21cm; /* A4 width */
+            min-height: 29.7cm; /* A4 height */
+            margin: 0 auto; /* Center the "paper" */
+            padding: 1in; /* Standard 1-inch margins */
+            border: 1px solid #b0b0b0; /* Faint border for the paper edge */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            border-radius: 0; /* No rounded corners */
+            box-sizing: border-box; /* Include padding in width/height */
+        }
+
+        /* --- Text & Heading Styles --- */
+        h2 {
+            text-align: center;
+            font-weight: 700;
+            text-decoration: underline;
+            margin-bottom: 2.5rem;
+            font-size: 16pt;
+        }
+        
+        h3 {
+             font-size: 13pt;
+             font-weight: 700;
+             margin-top: 2rem;
+             margin-bottom: 1rem;
+             border-bottom: 1px solid #eee;
+             padding-bottom: 0.25rem;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            text-align: justify; /* Justified text for formal look */
+        }
+
+        strong {
+            font-weight: 700;
+            color: #000;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* --- List Styles --- */
+        ol {
+            padding-left: 2rem;
+            margin-bottom: 1.25rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            text-align: justify;
+        }
+        
+        /* --- Placeholder Styles --- */
+        .placeholder-tag {
+            display: inline-block;
+            font-weight: 600;
+            padding: 0 0.25em;
+            border-radius: 3px;
+            min-width: 60px; /* Reduced min-width */
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 11pt; /* Slightly smaller for inline */
+            line-height: 1.4;
+            vertical-align: baseline;
+        }
+
+        /* --- Signature Section --- */
+        .signature-section {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            border-top: 1px solid #ced4da;
+            padding-top: 2rem;
+        }
+
+        .signature-block {
+            padding: 1rem;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+        }
+        
+        .signature-block h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            margin-top: 0;
+        }
+        
+        .signature-block p {
+            margin-bottom: 0.5rem;
+            text-align: left; /* Signatures shouldn't be justified */
+        }
+        
+        /* --- Print-Specific Styles --- */
+        @media print {
+            body {
+                background-color: #fff;
+                padding: 0;
+            }
+            .document-container {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                border: none;
+                box-shadow: none;
+            }
+            .placeholder-tag {
+                color: #000;
+                background-color: transparent;
+                font-weight: 700;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+<div class="document-container">
+
+    <h2>CONSULTING AGREEMENT</h2>
+    
+    <p>
+        This Consulting Agreement ("Agreement") is made and entered into on 
+        <span class="placeholder-tag">{{ effective.date }}</span>, by and between:
+    </p>
+    
+    <p>
+        <span class="placeholder-tag">{{ company.name }}</span>, a company incorporated under the laws of
+        <span class="placeholder-tag">{{ company.jurisdiction }}</span>, having its principal place of business at 
+        <span class="placeholder-tag">{{ company.address }}</span> (hereinafter referred to as the &ldquo;Company&rdquo;),
+    </p>
+    
+    <p><strong>AND</strong></p>
+    
+    <p>
+        <span class="placeholder-tag">{{ consultant.name }}</span>, an individual/entity with a principal address at 
+        <span class="placeholder-tag">{{ consultant.address }}</span> (hereinafter referred to as the
+        &ldquo;Consultant&rdquo;).
+    </p>
+    
+    <p><strong>WHEREAS:</strong></p>
+    
+    <p>
+        A. The Company requires consulting services in the field of <span class="placeholder-tag">{{ service.area }}</span>.<br>
+        B. The Consultant possesses the necessary expertise and is willing to provide such services to the Company.<br>
+        C. Both parties wish to define the terms and conditions of the consulting engagement.
+    </p>
+
+    <h3>1. Scope of Services</h3>
+    <p>
+        1.1 The Company hereby retains the Consultant, and the Consultant agrees to provide, consulting services as detailed in 
+        <strong>Schedule A</strong> (the &ldquo;Services&rdquo;).
+    </p>
+    <p>
+        1.2 The Consultant shall perform the Services with the skill, diligence, and quality of a professional consultant in the relevant field.
+    </p>
+
+    <h3>2. Term and Termination</h3>
+    <p>
+        2.1 This Agreement shall commence on <span class="placeholder-tag">{{ effective.date }}</span> and shall continue until 
+        <span class="placeholder-tag">{{ termination.date.or.event }}</span>, unless terminated earlier in accordance with this Agreement.
+    </p>
+    <p>
+        2.2 This Agreement may be terminated by either party upon <span class="placeholder-tag">{{ notice.period }}</span> days&rsquo; written notice to the other party.
+    </p>
+    <p>
+        2.3 The Company may terminate this Agreement immediately for cause, including but not limited to breach of any material term or misconduct by the Consultant.
+    </p>
+
+    <h3>3. Compensation</h3>
+    <p>
+        3.1 For the Services, the Company shall pay the Consultant a fee of <span class="placeholder-tag">{{ compensation.rate }}</span>, payable <span class="placeholder-tag">{{ payment.frequency }}</span> upon submission of a valid invoice.
+    </p>
+    <p>3.2 The Consultant shall be solely responsible for all income tax, professional taxes, and other statutory deductions applicable to the fee.</p>
+    <p>3.3 The Company shall reimburse the Consultant for pre-approved, reasonable, and necessary business expenses upon submission of proper documentation.</p>
+
+    <h3>4. Independent Contractor Status</h3>
+    <p>4.1 The Consultant is retained as an independent contractor. Nothing in this Agreement shall be construed to create an employer-employee, partnership, or joint venture relationship.</p>
+    <p>4.2 The Consultant shall be solely responsible for the methods and means of performing the Services.</p>
+
+    <h3>5. Confidentiality and Non-Disclosure</h3>
+    <p>5.1 The Consultant acknowledges that he/she will have access to confidential and proprietary information of the Company.</p>
+    <p>5.2 The Consultant agrees not to disclose or use any such information for any purpose other than the performance of the Services, both during and after the term of this Agreement.</p>
+
+    <h3>6. Intellectual Property</h3>
+    <p>
+        6.1 All work product, including but not limited to inventions, discoveries, designs, or works developed by the Consultant under this Agreement shall be considered &ldquo;works made for hire&rdquo; and shall be the sole and exclusive property of the Company.
+    </p>
+    <p>6.2 The Consultant hereby assigns and agrees to assign all rights, title, and interest in such intellectual property to the Company.</p>
+
+    <h3>7. Non-Solicitation</h3>
+    <p>
+        7.1 During the term of this Agreement and for a period of <span class="placeholder-tag">{{ nonsolicit.period }}</span> months following termination, the Consultant shall not solicit or attempt to solicit any employee or customer of the Company.
+    </p>
+
+    <h3>8. Notices</h3>
+    <p>12.1 Any notice under this Agreement shall be in writing and delivered personally, by courier, or by registered post
+        to the following addresses:</p>
+    <p>
+        <strong>To the Company:</strong> <br>
+        <span class="placeholder-tag">{{company.name }}</span><br>
+        <span class="placeholder-tag">{{ company.address }}</span>
+    </p>
+    <p>
+        <strong>To the Consultant:</strong> <br>
+        <span class="placeholder-tag">{{ consultant.name }}</span><br>
+        <span class="placeholder-tag">{{ consultant.address }}</span>
+    </p>
+
+    <h3>9. Governing Law and Jurisdiction</h3>
+    <p>9.1 This Agreement shall be governed by and construed in accordance with the laws of <span class="placeholder-tag">{{ company.jurisdiction }}</span>.</p>
+    <p>
+        9.2 The courts at <span class="placeholder-tag">{{ jurisdiction.city }}</span> shall have exclusive jurisdiction over any disputes arising from
+        this Agreement.
+    </p>
+
+    <h3>10. Entire Agreement and Amendment</h3>
+    <p>10.1 This Agreement constitutes the entire understanding between the parties and supersedes all prior agreements.</p>
+    <p>10.2 Any modification must be in writing and signed by both parties.</p>
+
+    <p><strong>IN WITNESS WHEREOF</strong></p>
+    <p>The parties hereto have executed this Consulting Agreement on the day and year first written above.</p>
+
+    <div class="signature-section">
+        <div class="signature-block">
+            <h3>For: <span class="placeholder-tag">{{ company.name }}</span></h3>
+            <p>Name: <span class="placeholder-tag">{{ authorized.signatory.name }}</span></p>
+            <p>Designation: <span class="placeholder-tag">{{ authorized.signatory.designation }}</span></p>
+            <p>Date: <span class="placeholder-tag">{{ effective.date }}</span></p>
+        </div>
+        
+        <div class="signature-block">
+            <h3>Consultant</h3>
+            <p>Name: <span class="placeholder-tag">{{ consultant.name }}</span></p>
+            <p>Date: <span class="placeholder-tag">{{ effective.date }}</span></p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

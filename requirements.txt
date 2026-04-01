@@ -1,0 +1,21 @@
+Flask
+flask-cors
+transformers
+torch
+tika
+
+pymongo
+flask-jwt-extended
+bcrypt
+python-dotenv
+authlib
+WeasyPrint
+
+flask
+requests
+pdfplumber
+tika
+nltk
+sentence-transformers
+torch       # required by sentence-transformers
+transformers  # if you call HF directly in future
