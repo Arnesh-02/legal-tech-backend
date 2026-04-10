@@ -1,21 +1,30 @@
 FROM python:3.13-slim
 
-# Install system dependencies for WeasyPrint and PDF generation
+# Install system dependencies for WeasyPrint
 RUN apt-get update && apt-get install -y \
     python3-pip python3-cffi python3-brotli libpango-1.0-0 \
     libharfbuzz0b libpangoft2-1.0-0 libpangocairo-1.0-0 \
     libcairo2 libglib2.0-0 shared-mime-info \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Set up a new user 'user' with UID 1000
+RUN useradd -m -u 1000 user
+USER user
+ENV HOME=/home/user \
+    PATH=/home/user/.local/bin:$PATH
 
-COPY . .
+WORKDIR $HOME/app
 
-# Set dynamic port for Render
-ENV PORT=10000
-EXPOSE 10000
+# Copy requirements and install
+COPY --chown=user requirements.txt .
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
-# Start with Gunicorn
-CMD ["gunicorn", "-w", "1", "-b", "0.0.0.0:10000", "app:app", "--timeout", "150"]
+# Copy the rest of the application
+COPY --chown=user . .
+
+# Hugging Face uses port 7860
+ENV PORT=7860
+EXPOSE 7860
+
+# Start Gunicorn on port 7860
+CMD ["gunicorn", "-w", "1", "-b", "0.0.0.0:7860", "app:app", "--timeout", "150"]
