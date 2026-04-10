@@ -200,9 +200,10 @@ def is_allowed_origin(origin):
     if not origin:
         return False
     allowed_patterns = [
+        r"^https://legal-tech-frontend-02\.vercel\.app$", # Your specific new URL
         r"^https://legal-tech-opal\.vercel\.app$",
         r"^https://legal-tech-[a-z0-9]+-arnesh-02s-projects\.vercel\.app$",
-        r"^https://legal-tech.*\.vercel\.app$",   # catches any future vercel preview URLs
+        r"^https://legal-tech.*\.vercel\.app$",   # Still catches any future subdomains
         r"^http://localhost:5173$",
         r"^http://localhost:3000$",
     ]
@@ -535,4 +536,7 @@ def render_redrafted_pdf():
     
 
 if __name__ == "__main__":
-    app.run(port=5000, debug=True)
+    # Use the port assigned by Render, defaulting to 5000 if not found
+    port = int(os.environ.get("PORT", 5000)) 
+    # Use 0.0.0.0 to allow the server to be reachable externally
+    app.run(host="0.0.0.0", port=port)

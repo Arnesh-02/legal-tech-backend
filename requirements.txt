@@ -1,21 +1,27 @@
+# Web Framework & Security
 Flask
 flask-cors
+flask-jwt-extended  # For secure cookies and JWT
+bcrypt             # For password hashing
+python-dotenv      # For .env management
+authlib
+gunicorn           # For production serving
+
+# Database
+pymongo            # For MongoDB Atlas connection
+
+# AI & LLM (Mistral SDK)
+mistralai>=1.0.0   # For your redraft and analysis logic
+requests           # For API calls
+
+# Legal Document Processing (Transformers & NLP)
 transformers
 torch
-tika
-
-pymongo
-flask-jwt-extended
-bcrypt
-python-dotenv
-authlib
-WeasyPrint
-
-flask
-requests
+sentence-transformers
+nltk
 pdfplumber
 tika
-nltk
-sentence-transformers
-torch       # required by sentence-transformers
-transformers  # if you call HF directly in future
+
+# PDF Generation & Rendering
+fpdf2>=2.7.0       # For professional risk reports
+WeasyPrint         # For redrafted HTML to PDF
