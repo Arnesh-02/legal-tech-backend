@@ -537,6 +537,4 @@ def render_redrafted_pdf():
 
 if __name__ == "__main__":
     # Use the port assigned by Render, defaulting to 5000 if not found
-    port = int(os.environ.get("PORT", 5000)) 
-    # Use 0.0.0.0 to allow the server to be reachable externally
-    app.run(host="0.0.0.0", port=port)
+    app.run(debug=True)
