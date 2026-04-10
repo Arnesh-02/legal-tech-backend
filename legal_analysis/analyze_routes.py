@@ -35,6 +35,6 @@ Contract:
 Summary:
 """
 
-    summary = call_llm("mistral", prompt)
+    summary = call_llm("mistral-large-latest", prompt)
 
     return jsonify({"summary": summary})

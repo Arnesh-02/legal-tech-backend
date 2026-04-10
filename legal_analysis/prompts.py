@@ -14,8 +14,8 @@ Return ONLY a JSON object that matches this schema exactly (no extra commentary)
       "severity": "low|medium|high",
       "confidence": 0.0,
       "evidence": "<text excerpt from source>",
-      "explanation": "<2-3 sentence explanation>",
-      "recommendation": "<concise legal action or mitigation step>"
+      "explanation": "<1-2 sentence explanation>",
+      "recommendation": "<concise legal action or mitigation step in 1 -2 lines>"
     }
   ],
   "summary": "<one-paragraph summary>",

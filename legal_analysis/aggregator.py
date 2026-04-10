@@ -29,6 +29,7 @@ def dedupe_and_merge(parsed_chunk_results, similarity_threshold=0.82):
                 all_risks.append(r_copy)
 
     if not all_risks:
+        print("[WARNING] No risks were found in any chunk by the LLM.")
         return {"risks": [], "meta": {}}
 
     texts = [ (r.get("title","") + " " + r.get("evidence","")) for r in all_risks ]

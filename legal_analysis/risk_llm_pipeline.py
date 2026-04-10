@@ -26,7 +26,7 @@ def run_risk_analysis(pdf_path: str):
     chunks = chunk_text(text)
 
     # 3. Analyze with model
-    analysis = analyze_chunks(chunks, doc_id, model_name="mistral")
+    analysis = analyze_chunks(chunks, doc_id, model_name="mistral-large-latest")
 
     # 4. Aggregate
     aggregated = dedupe_and_merge(analysis)
