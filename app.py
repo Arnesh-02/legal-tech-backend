@@ -199,15 +199,22 @@ def generate_report():
 def is_allowed_origin(origin):
     if not origin:
         return False
-    allowed_patterns = [
-        r"^https://legal-tech-frontend-02\.vercel\.app$", # Your specific new URL
-        r"^https://legal-tech-opal\.vercel\.app$",
-        r"^https://legal-tech-[a-z0-9]+-arnesh-02s-projects\.vercel\.app$",
-        r"^https://legal-tech.*\.vercel\.app$",   # Still catches any future subdomains
-        r"^http://localhost:5173$",
-        r"^http://localhost:3000$",
+    
+    # List your exact production and dev URLs
+    allowed_origins = [
+        "https://legal-tech-frontend-02.vercel.app",
+        "https://legal-tech-opal.vercel.app",
+        "http://localhost:5173",
+        "http://localhost:3000"
     ]
-    return any(re.match(pattern, origin) for pattern in allowed_patterns)
+    
+    # Check for exact match or Vercel preview patterns
+    if origin in allowed_origins:
+        return True
+    if ".vercel.app" in origin and "legal-tech" in origin:
+        return True
+        
+    return False
 
 # ----------------------------------------------------
 # 3. CORS SETUP
@@ -235,12 +242,11 @@ def add_headers(response):
 def handle_options(path):
     resp = Response()
     origin = request.headers.get('Origin')
-    if origin and is_allowed_origin(origin):
+    if is_allowed_origin(origin):
         resp.headers['Access-Control-Allow-Origin'] = origin
-    resp.headers['Access-Control-Allow-Credentials'] = 'true'
-    resp.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization, X-Requested-With, ngrok-skip-browser-warning'
-    resp.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS'
-    resp.headers['ngrok-skip-browser-warning'] = 'true'
+        resp.headers['Access-Control-Allow-Credentials'] = 'true'
+        resp.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization, X-Requested-With'
+        resp.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS'
     return resp, 200
 
 # ----------------------------------------------------
